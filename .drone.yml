@@ -1,9 +1,11 @@
-name: drone-test
 kind: pipeline
 type: docker
+name: arm-64
+
+platform:
+  os: linux
+  arch: arm64
 
 steps:
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked"
+- name: build
+  image: golang
